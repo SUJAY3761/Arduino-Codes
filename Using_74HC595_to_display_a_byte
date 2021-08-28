@@ -1,0 +1,20 @@
+int clockPin = 8;
+int latchPin = 11;
+int dataPin = 12;
+int dt = 500;
+byte Mybyte = 0b01010101;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(latchPin,OUTPUT);
+pinMode(clockPin,OUTPUT);
+pinMode(dataPin,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(latchPin,LOW);
+shiftOut(dataPin,clockPin,MSBFIRST,Mybyte);
+digitalWrite(latchPin,HIGH);
+delay(dt);
+}
