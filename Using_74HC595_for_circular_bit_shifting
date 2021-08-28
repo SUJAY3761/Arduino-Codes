@@ -1,4 +1,4 @@
-clockPin = 8;
+int clockPin = 8;
 int latchPin = 11;
 int dataPin = 12;
 int dt = 500;
